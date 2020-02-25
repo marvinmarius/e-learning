@@ -9,4 +9,9 @@ class Organization extends Model
     protected $fillable = [
         'name', 'description'
     ];
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class);
+    }
 }
