@@ -11,6 +11,6 @@ class VirtualClassroomTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\VirtualClassroom::class, 10)->create();
     }
 }

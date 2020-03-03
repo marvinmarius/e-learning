@@ -17,11 +17,18 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('last_name')->nullable();
+            $table->string('username');
+            $table->boolean('connected')->nullable();
             $table->string('slug');
-            $table->dateTime('last_connexion_date');
+            $table->string('token')->nullable();
+            $table->string('avatar')->nullable();
+            $table->bigInteger('phone')->nullable();
+            $table->timestamp('last_connexion_date')->nullable();
             $table->string('email')->unique();
-            $table->string('password')->nullable();
+            $table->string('password');
             $table->string('picture')->nullable();
+            $table->text('biography')->nullable();
+            $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('group_id');
             $table->unsignedBigInteger('subscription_id');
             $table->unsignedBigInteger('student_id');
@@ -48,6 +55,7 @@ class CreateUsersTable extends Migration
                 ->references('id')
                 ->on('forums')
                 ->onDelete('cascade');
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
     }

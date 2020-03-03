@@ -17,6 +17,9 @@ class CreateSubscriptionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('type');
             $table->integer('amount');
+            $table->bigInteger('card_number');
+            $table->dateTime('expiration_date');
+            $table->string('security_code');
             $table->timestamps();
         });
     }

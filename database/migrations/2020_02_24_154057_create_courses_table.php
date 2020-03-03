@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->string('slug');
             $table->string('video')->nullable();
             $table->string('picture')->nullable();
+            $table->time('duration');
             $table->enum('status', ['PUBLISHED' ,'PENDING','REJECTED'])->default('PENDING');
             $table->unsignedBigInteger('subcategory_id');
             $table->unsignedBigInteger('teacher_id');

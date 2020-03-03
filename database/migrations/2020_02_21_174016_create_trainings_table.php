@@ -19,6 +19,7 @@ class CreateTrainingsTable extends Migration
             $table->string('description');
             $table->string('level');
             $table->integer('amount');
+            $table->time('duration');
             $table->timestamps();
         });
     }

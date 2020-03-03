@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRoleUsersTable extends Migration
+class CreateCourseQuizTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateRoleUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('role_users', function (Blueprint $table) {
+        Schema::create('course_quiz', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('role_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('quiz_id');
 
-            $table->foreign('role_id')
+            $table->foreign('course_id')
                 ->references('id')
-                ->on('roles')
+                ->on('courses')
                 ->onDelete('cascade');
 
-            $table->foreign('user_id')
+            $table->foreign('quiz_id')
                 ->references('id')
-                ->on('users')
+                ->on('quizzes')
                 ->onDelete('cascade');
             $table->timestamps();
         });
@@ -38,6 +38,6 @@ class CreateRoleUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_users');
+        Schema::dropIfExists('course_quiz');
     }
 }

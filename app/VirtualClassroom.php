@@ -10,4 +10,14 @@ class VirtualClassroom extends Model
     {
         return $this->hasOne(Teacher::class);
     }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class);
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
+    }
 }

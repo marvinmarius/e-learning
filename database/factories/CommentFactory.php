@@ -2,12 +2,16 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Comment;
+use App\Forum;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Comment::class, function (Faker $faker) {
     return [
-        'name'        => $faker->firstName,
-        'content' => $faker->sentence,
+        'title'        => $faker->sentence,
+        'content' => $faker->text,
+        'reply' => $faker->randomNumber(1),
+        'forum_id' => Forum::all()->random()->id,
+
     ];
 });

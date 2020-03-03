@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Student::class, function (Faker $faker) {
     return [
-        'user_id'     => null,
         'title'       => $faker->jobTitle,
+        'date_creation_compte'       => $faker->dateTime,
 
     ];
 });

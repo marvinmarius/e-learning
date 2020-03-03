@@ -11,6 +11,6 @@ class SubPartTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\SubPart::class, 10)->create();
     }
 }

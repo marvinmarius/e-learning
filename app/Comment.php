@@ -14,4 +14,5 @@ class Comment extends Model
     {
         return $this->belongsTo(Forum::class);
     }
+
 }

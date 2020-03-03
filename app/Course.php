@@ -33,9 +33,14 @@ class Course extends Model
         return $this->hasMany(Part::class);
     }
 
+    public function subpart()
+    {
+        return $this->hasManyThrough(SubPart::class, Part::class);
+    }
+
     public function quiz()
     {
-        return $this->hasMany(Quiz::class);
+        return $this->belongsToMany(Quiz::class);
     }
 
     public function teacher()
@@ -55,6 +60,7 @@ class Course extends Model
 
     public function forum()
     {
-        return $this->belongsTo(Forum::class);
+        return $this->hasOne(Forum::class);
     }
+
 }

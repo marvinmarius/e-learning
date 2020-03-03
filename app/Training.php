@@ -19,6 +19,11 @@ class Training extends Model
         'name', 'description', 'level',
     ];
 
+    public function subcategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
 
 
 }

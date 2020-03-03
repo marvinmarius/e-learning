@@ -21,4 +21,9 @@ class Teacher extends Model
     {
         return $this->hasMany(VirtualClassroom::class);
     }
+
+    public function organizations()
+    {
+        return $this->belongsToMany(Organization::class);
+    }
 }

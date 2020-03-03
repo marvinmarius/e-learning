@@ -5,8 +5,9 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(\App\Quiz::class, function (Faker $faker) {
     return [
-        //
+        'content' => $faker->word,
+        'answers'=> $faker->sentence,
     ];
 });

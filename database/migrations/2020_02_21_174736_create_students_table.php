@@ -15,6 +15,7 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->dateTime('date_creation_compte');
             $table->string('title')->nullable();
             $table->timestamps();
         });
