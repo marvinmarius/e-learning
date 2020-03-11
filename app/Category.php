@@ -10,7 +10,7 @@ class Category extends Model
 
 
 
-    public function subCategory()
+    public function subcategory()
     {
         return $this->hasMany(SubCategory::class);
     }

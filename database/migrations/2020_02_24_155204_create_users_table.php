@@ -29,11 +29,11 @@ class CreateUsersTable extends Migration
             $table->string('picture')->nullable();
             $table->text('biography')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->unsignedBigInteger('group_id');
-            $table->unsignedBigInteger('subscription_id');
-            $table->unsignedBigInteger('student_id');
-            $table->unsignedBigInteger('teacher_id');
-            $table->unsignedBigInteger('forum_id');
+            $table->unsignedBigInteger('group_id')->index()->nullable();
+            $table->unsignedBigInteger('subscription_id')->index()->nullable();
+            $table->unsignedBigInteger('student_id')->index()->nullable();
+            $table->unsignedBigInteger('teacher_id')->index()->nullable();
+            $table->unsignedBigInteger('forum_id')->index()->nullable();
 
             $table->foreign('group_id')
                 ->references('id')

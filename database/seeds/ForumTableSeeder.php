@@ -11,6 +11,6 @@ class ForumTableSeeder extends Seeder
      */
     public function run()
     {
-
+        factory(\App\Forum::class, 10)->create();
     }
 }
